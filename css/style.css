@@ -1,0 +1,42 @@
+body {
+    background: url("../assets/images/background.jpg") no-repeat fixed center;
+}
+
+#mainBody {
+    margin-top: 40px;
+
+}
+
+.cameraBtn {
+    font-weight: 600;
+    color: rgb(150, 94, 61);
+    text-align: center;
+    width: 23.9%;
+    position: relative;
+    float: left;
+    margin: 6px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background:  rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    border: none;
+}
+
+.imageLink {
+    position: relative;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+    background:  rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    width: 46%;
+}
+
+.photoDump {
+    position: relative;
+    left: 6px;
+}
+
+input {
+    width: 80%;
+}
