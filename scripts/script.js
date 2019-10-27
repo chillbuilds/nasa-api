@@ -8,7 +8,7 @@ var camShort = ["FHAZ", "NAVCAM", "MAST", "RHAZ"]
 var camLong = ["Front Hazard Avoidance Camera", "Navigation Camera", "Mast Camera", "Rear Hazard Avoidance Camera"]
 
 
-function ajaxCall(){
+function curiosityCall(){
     var year = $("#year").val();
     var month = $("#month").val();
     var day = $("#day").val();
@@ -34,12 +34,32 @@ function ajaxCall(){
         }
     })}
 
+function satelliteCall(){
+    var year = $("#year").val();
+    var month = $("#month").val();
+    var day = $("#day").val();
+    var lon = $("#longitude").val();
+    var lat = $("#latitude").val();
+    queryURL = "https://api.nasa.gov/planetary/earth/imagery?lon="+lon+"&lat="+lat+"&date="+year+"-"+month+"-"+day+"&api_key=" + APIKey;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        .then(function(response) {
+            console.log(response);
+        })
+}
+
+
 $(".cameraBtn").on("click", function (){
     camChoice = $(this).attr("id");
-    ajaxCall();
+    curiosityCall();
 })
 
-// $(document).on("click", function(){
-
-// })
-//#FE8360
+$(document).on("keyup", function(event){
+    var n = event.which;
+    if(n === 13){
+        satelliteCall();
+    }
+})
