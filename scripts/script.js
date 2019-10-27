@@ -7,6 +7,9 @@ var camShort = ["FHAZ", "NAVCAM", "MAST", "RHAZ"]
 // ^ ^ ^ response.photos[1].rover.cameras[1].name
 var camLong = ["Front Hazard Avoidance Camera", "Navigation Camera", "Mast Camera", "Rear Hazard Avoidance Camera"]
 
+function savedDates(){
+    
+}
 
 function curiosityCall(){
     var year = $("#year").val();
@@ -21,17 +24,12 @@ function curiosityCall(){
         $(".photoDump").html("");
         resp = response;
         for (i = 0; i < resp.photos.length; i++){
-
             if(camChoice == resp.photos[i].camera.name){
                 var imageVar = $("<img>");
                 imageVar.addClass("imageLink");
                 imageVar.attr("src", resp.photos[i].img_src);
                 $(".photoDump").append(imageVar);
-
-
-                console.log(resp.photos[i].img_src);
-            }
-        }
+                console.log(resp.photos[i].img_src);}}
     })}
 
 function satelliteCall(){
@@ -48,8 +46,7 @@ function satelliteCall(){
       })
         .then(function(response) {
             console.log(response);
-        })
-}
+        })}
 
 
 $(".cameraBtn").on("click", function (){
@@ -60,6 +57,7 @@ $(".cameraBtn").on("click", function (){
 $(document).on("keyup", function(event){
     var n = event.which;
     if(n === 13){
-        satelliteCall();
-    }
+        satelliteCall();}
 })
+
+//4-21-2015
